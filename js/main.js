@@ -24,4 +24,11 @@ function turnCar(event) {
     car.direction = 'down';
     $carImg.className = 'car down';
   }
+  if (event.key === ' ') {
+    setInterval(moveCar, 16);
+  }
+}
+
+function moveCar() {
+  $carImg.style.left= 10 + 'px';
 }
