@@ -1,4 +1,4 @@
-var $carImg = document.querySelector('.car');
+var $carImg = document.getElementById('f1-car');
 
 var car = {
   direction: 'right',
