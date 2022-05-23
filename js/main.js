@@ -25,10 +25,16 @@ function turnCar(event) {
     $carImg.className = 'car down';
   }
   if (event.key === ' ') {
-    setInterval(moveCar, 16);
+    setInterval(startCar, 16);
   }
 }
 
-function moveCar() {
-  $carImg.style.left= 10 + 'px';
+function startCar() {
+  var movingCar = parseInt($carImg.style.left) + 15;
+  if (isNaN(movingCar)) {
+    movingCar = 15;
+  }
+  var newValue = movingCar;
+  car.position.y = newValue;
+  $carImg.style.left = (newValue + 'px');
 }
