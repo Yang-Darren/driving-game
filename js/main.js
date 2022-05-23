@@ -1,7 +1,11 @@
 var $carImg = document.querySelector('.car');
 
 var car = {
-  direction: 'right'
+  direction: 'right',
+  position: {
+    x: 0,
+    y: 0
+  }
 };
 
 document.addEventListener('keydown', turnCar);
