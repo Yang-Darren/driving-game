@@ -5,7 +5,9 @@
 #f1-car {
   max-width: 10%;
   height: auto;
+  position:absolute;
 }
+
 
 .right {
   transform: rotate(0deg);

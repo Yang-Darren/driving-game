@@ -1,7 +1,11 @@
-var $carImg = document.querySelector('.car');
+var $carImg = document.getElementById('f1-car');
 
 var car = {
-  direction: 'right'
+  direction: 'right',
+  position: {
+    x: 0,
+    y: 0
+  }
 };
 
 document.addEventListener('keydown', turnCar);
@@ -20,4 +24,17 @@ function turnCar(event) {
     car.direction = 'down';
     $carImg.className = 'car down';
   }
+  if (event.key === ' ') {
+    setInterval(startCar, 16);
+  }
+}
+
+function startCar() {
+  var movingCar = parseInt($carImg.style.left) + 15;
+  if (isNaN(movingCar)) {
+    movingCar = 15;
+  }
+  var newValue = movingCar;
+  car.position.y = newValue;
+  $carImg.style.left = (newValue + 'px');
 }
