@@ -9,6 +9,8 @@ var car = {
   }
 };
 
+var stopCar;
+
 document.addEventListener('keydown', turnCar);
 
 function turnCar(event) {
