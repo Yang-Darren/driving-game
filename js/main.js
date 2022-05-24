@@ -2,6 +2,7 @@ var $carImg = document.getElementById('f1-car');
 
 var car = {
   direction: 'right',
+  speed: 0,
   position: {
     x: 0,
     y: 0
