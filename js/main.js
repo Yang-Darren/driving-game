@@ -28,11 +28,17 @@ function turnCar(event) {
     $carImg.className = 'car down';
   }
   if (event.key === ' ') {
-    setInterval(startCar, 16);
+    if (car.speed === 0) {
+      movingCar = setInterval(startCar, 16);
+    } else if (car.speed === 1) {
+      clearInterval(movingCar);
+      car.start = false;
+    }
   }
 }
 
 function startCar() {
+  car.speed = 1;
   var movingCar = parseInt($carImg.style.left) + 15;
   if (isNaN(movingCar)) {
     movingCar = 15;
