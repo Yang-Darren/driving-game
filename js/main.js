@@ -56,5 +56,13 @@ function startCar() {
     var newValue = movingCar;
     car.position.x = newValue;
     $carImg.style.right = (newValue + 'px');
+  } else if (car.direction === 'up') {
+    var movingCar = parseInt($carImg.style.bottom) + 15;
+    if (isNaN(movingCar)) {
+      movingCar = 15;
+    }
+    var newValue = movingCar;
+    car.position.y = newValue;
+    $carImg.style.bottom = (newValue + 'px');
   }
 }
