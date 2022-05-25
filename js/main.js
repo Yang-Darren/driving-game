@@ -19,15 +19,19 @@ function turnCar(event) {
   if (event.key === 'ArrowRight') {
     car.direction = 'right';
     $carImg.className = 'car right';
+    $yellowCar.className = 'car right'
   } else if (event.key === 'ArrowLeft') {
     car.direction = 'left';
     $carImg.className = 'car left';
+    $yellowCar.className = 'car left';
   } else if (event.key === 'ArrowUp') {
     car.direction = 'up';
     $carImg.className = 'car up';
+    $yellowCar.className = 'car up';
   } else if (event.key === 'ArrowDown') {
     car.direction = 'down';
     $carImg.className = 'car down';
+    $yellowCar.className = 'car down';
   }
   if (event.key === ' ') {
     if (car.speed === 0) {
