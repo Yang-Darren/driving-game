@@ -32,18 +32,45 @@ function turnCar(event) {
       movingCar = setInterval(startCar, 16);
     } else if (car.speed === 1) {
       clearInterval(movingCar);
-      car.start = false;
+      car.speed = 0;
     }
   }
 }
 
 function startCar() {
   car.speed = 1;
-  var movingCar = parseInt($carImg.style.left) + 15;
-  if (isNaN(movingCar)) {
+
+  if (car.direction ==='right') {
+    var movingCar = parseInt($carImg.style.left) + 15;
+    if (isNaN(movingCar)) {
     movingCar = 15;
   }
   var newValue = movingCar;
-  car.position.y = newValue;
+  car.position.x = newValue;
   $carImg.style.left = (newValue + 'px');
+  } else if (car.direction === 'left') {
+    var movingCar = parseInt($carImg.style.left) - 15;
+    if (isNaN(movingCar)) {
+      movingCar = 15;
+    }
+    var newValue = movingCar;
+    car.position.x = newValue;
+    $carImg.style.left = (newValue + 'px');
+  } else if (car.direction === 'up') {
+    var movingCar = parseInt($carImg.style.top) - 15;
+    if (isNaN(movingCar)) {
+      movingCar = 15;
+    }
+    var newValue = movingCar;
+    car.position.y = newValue;
+    $carImg.style.top = (newValue + 'px');
+  } else if (car.direction === 'down') {
+    var movingCar = parseInt($carImg.style.top) + 15;
+    if (isNaN(movingCar)) {
+      movingCar = 15;
+    }
+    var newValue = movingCar;
+    car.position.y = newValue;
+    $carImg.style.top = (newValue + 'px');
+  }
 }
