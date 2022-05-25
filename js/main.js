@@ -1,4 +1,5 @@
 var $carImg = document.getElementById('f1-car');
+var $yellowCar = document.getElementById('yellow-car')
 
 var car = {
   direction: 'right',
@@ -12,6 +13,7 @@ var car = {
 var stopCar;
 
 document.addEventListener('keydown', turnCar);
+document.addEventListener('click', selectCar);
 
 function turnCar(event) {
   if (event.key === 'ArrowRight') {
@@ -72,5 +74,13 @@ function startCar() {
     var newValue = movingCar;
     car.position.y = newValue;
     $carImg.style.top = (newValue + 'px');
+  }
+}
+
+function selectCar(event) {
+  if (event.target.matches('#f1-car')) {
+    $yellowCar.classList.add('hidden');
+  } else if (event.target.matches('#yellow-car')) {
+    $carImg.classList.add('hidden');
   }
 }
